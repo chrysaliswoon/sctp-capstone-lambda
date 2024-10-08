@@ -1,13 +1,12 @@
 name: Deploy Lambda Function
 
+
 # on:
 #   push:
 #     branches:
 #       - main  # Change this to your main branch
-#   workflow_dispatch:
-on:
-  workflow_dispatch:
-    
+on: [workflow_dispatch]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
