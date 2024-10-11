@@ -1,6 +1,5 @@
 name: Deploy Lambda Function
 
-
 on:
   push:
     branches:
@@ -18,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.10.12'  # Change this to your desired Python version
+          python-version: '3.10'  # Change this to your desired Python version
 
       - name: Package Lambda function
         run: |
