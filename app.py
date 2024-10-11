@@ -98,7 +98,7 @@ class BuildIndicators():
     def put_xlsx_as_object(self):
         s3 = boto3.client('s3')
         
-        bucket_name = 'ce6-group3-sssw' 
+        bucket_name = 'ce6-capstone-group3-dev-sssw' 
         file_key = 'output/sssw dashboard.xlsx'  
         
         with io.BytesIO() as output:
