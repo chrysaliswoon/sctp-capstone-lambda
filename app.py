@@ -34,7 +34,7 @@ class BuildIndicators():
         s3 = boto3.client('s3')
         self.div = div
 
-        bucket_name = 'ce6-group3-sssw'
+        bucket_name = 'ce6-capstone-group3-dev-sssw'
 
         self.df_baseline = get_s3_object(bucket_name, 'SSSW/S1. Baseline_.xlsx')
         self.df_movement = get_s3_object(bucket_name, 'SSSW/S1a. Baseline - Movement Level_.xlsx')
