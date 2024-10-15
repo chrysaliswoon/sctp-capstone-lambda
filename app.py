@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import boto3
 import io
+import os
 import numpy as np
 from collections import OrderedDict
 
@@ -34,7 +35,7 @@ class BuildIndicators():
         s3 = boto3.client('s3')
         self.div = div
 
-        bucket_name = 'ce6-group3-sssw'
+        bucket_name = os.getenv('BUCKET_NAME')
 
         self.df_baseline = get_s3_object(bucket_name, 'SSSW/S1. Baseline_.xlsx')
         self.df_movement = get_s3_object(bucket_name, 'SSSW/S1a. Baseline - Movement Level_.xlsx')
@@ -98,7 +99,7 @@ class BuildIndicators():
     def put_xlsx_as_object(self):
         s3 = boto3.client('s3')
         
-        bucket_name = 'ce6-group3-sssw' 
+        bucket_name = os.getenv('BUCKET_NAME')
         file_key = 'output/sssw dashboard.xlsx'  
         
         with io.BytesIO() as output:
