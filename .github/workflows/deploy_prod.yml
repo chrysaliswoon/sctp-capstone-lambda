@@ -1,0 +1,32 @@
+name: Deploy Dev Lambda Function
+
+on:
+  pull_request:
+    branch : ["dev"]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'  # Change this to your desired Python version
+
+      - name: Package Lambda function
+        run: |
+          zip -r lambda_function.zip app.py
+
+      - name: Deploy to AWS Lambda
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "ap-southeast-1"
+        run: |
+          aws lambda update-function-code --function-name ce6-capstone-group3-process-data-${{ github.ref_name }} --zip-file fileb://lambda_function.zip --region ap-southeast-1
