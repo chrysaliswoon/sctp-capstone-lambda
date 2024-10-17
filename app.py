@@ -86,7 +86,6 @@ class BuildIndicators():
         self.df_merged['Surg_Admission'] = self.df_merged['CSN'].map(csn_move_pair)
         
         df_ = self.df_merged.loc[self.df_merged['Disch/Visit Date'] != self.df_merged['Disch/Visit Date'].max()]
-        df_['Disch DateTime'] = df_['Disch DateTime'].astype('datetime64') 
         
         df_['LOS Upon Surg SSW Adm'] = (df_['Disch DateTime'] - df_['Surg_Admission'])
         df_.set_index('CSN',inplace=True)
@@ -100,7 +99,7 @@ class BuildIndicators():
         s3 = boto3.client('s3')
         
         bucket_name = os.getenv('BUCKET_NAME')
-        file_key = 'output/sssw dashboard.xlsx'  
+        file_key = 'output/sssw dashboard.csv'  
         
         with io.BytesIO() as output:
             # Save the DataFrame to the in-memory buffer
