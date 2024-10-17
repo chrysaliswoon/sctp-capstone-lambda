@@ -1,1 +1,1 @@
-This is a readme file for Lambda Lah
+This is a readme file for Lambda
