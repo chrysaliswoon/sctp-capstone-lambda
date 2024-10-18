@@ -1,14 +1,13 @@
-name: Deploy Dev Lambda Function
+name: Deploy Prod Lambda Function
 
 on:
   pull_request:
-    branch : ["dev"]
+    branch : ["main"]
 
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: ${{ github.ref_name }}
 
     steps:
       - name: Checkout code
