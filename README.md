@@ -82,4 +82,4 @@ You can manage your Lambda functions through the AWS Lambda console, including u
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+
