@@ -28,4 +28,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "ap-southeast-1"
         run: |
-          aws lambda update-function-code --function-name ce6-capstone-group3-process-data-${{ github.ref_name }} --zip-file fileb://lambda_function.zip --region ap-southeast-1
+          aws lambda update-function-code --function-name ce6-capstone-group3-process-data-prod --zip-file fileb://lambda_function.zip --region ap-southeast-1
