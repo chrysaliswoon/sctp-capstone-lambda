@@ -122,8 +122,7 @@ class BuildIndicators():
     
             # Upload the buffer's content to S3
             s3.put_object(Bucket=bucket_name, Key=file_key, Body=output) 
-        
-    
+          
     def surgical_pipeline(self):
         #
         self.select_folder_read('SSSW')
