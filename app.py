@@ -93,6 +93,18 @@ class BuildIndicators():
         self.df_merged['LOS Upon Surg SSW Adm'] = self.df_merged['CSN'].map(csn_los_pair)
                 
         return self.df_merged
+    
+    def process_tosp(self):
+        
+        self.df_tosp.set_index('CSN', inplace=True)
+        
+        csn_tosp_code_pair = self.df_tosp['Proc Code'].to_dict()
+        csn_tosp_desc_pair = self.df_tosp['Proc Name'].to_dict()
+        
+        self.df_merged['TOSP Code'] = self.df_merged['CSN'].map(csn_tosp_code_pair)
+        self.df_merged['TOSP Desc'] = self.df_merged['CSN'].map(csn_tosp_desc_pair)
+        
+        return self.df_merged
         
         
     def put_xlsx_as_object(self):
@@ -122,7 +134,7 @@ class BuildIndicators():
         #self.find_transfer_out_icu('KWB055')
         #self.export_file()
         #self.get_admission_yyyy_mm()
-        #self.process_tosp()
+        self.process_tosp()
             
         return self.df_merged      
             
