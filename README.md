@@ -6,11 +6,11 @@ This repository is dedicated to the creation and management of the AWS Lambda fu
 
 ## What is AWS Lambda?
 
-![AWS Lambda](image.png)
+![AWS Lambda](https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2019/02/04/sam-layers-diag.png)
 
 [AWS Lambda](https://aws.amazon.com/lambda/) is a serverless computing service that allows you to run code without provisioning or managing servers. You can trigger Lambda functions in response to various events, making it a flexible solution for building scalable applications.
 
-![Architecture Diagram](./assets/lambda-architecture.jpeg)
+![Architecture Diagram](https://github.com/chrysaliswoon/sctp-capstone-aws-insfrastructure/blob/main/assets/diagram.jpeg)
 
 ### Key Features of AWS Lambda:
 - **Serverless Execution:** Automatically runs your code in response to events without requiring server management.
